@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetsProductID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="productname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetsProductIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetsProductIDResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductss">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProductssResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductssResult" type="tns:ArrayOfProducts" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProducts">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Products" nillable="true" type="tns:Products" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Products">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SupplierID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="QuantityPerUnit" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetOrdersByCustomerr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrdersByCustomerrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrdersByCustomerrResult" type="tns:ArrayOfOrders" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOrders">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Orders" nillable="true" type="tns:Orders" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Orders">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OrderID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipVia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipRegion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFirstCustomerData">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFirstCustomerDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFirstCustomerDataResult" type="tns:Customers" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Customers">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactTitle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLastCustomers">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLastCustomersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLastCustomersResult" type="tns:Customers" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNextCustomerr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNextCustomerrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNextCustomerrResult" type="tns:Customers" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadPreviousCustomerr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadPreviousCustomerrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadPreviousCustomerrResult" type="tns:Customers" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetsProductIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetsProductID" />
+  </wsdl:message>
+  <wsdl:message name="GetsProductIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetsProductIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductssSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductss" />
+  </wsdl:message>
+  <wsdl:message name="GetProductssSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductssResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrdersByCustomerrSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrdersByCustomerr" />
+  </wsdl:message>
+  <wsdl:message name="GetOrdersByCustomerrSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrdersByCustomerrResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstCustomerDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFirstCustomerData" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstCustomerDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFirstCustomerDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastCustomersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastCustomers" />
+  </wsdl:message>
+  <wsdl:message name="GetLastCustomersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNextCustomerrSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNextCustomerr" />
+  </wsdl:message>
+  <wsdl:message name="GetNextCustomerrSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNextCustomerrResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadPreviousCustomerrSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadPreviousCustomerr" />
+  </wsdl:message>
+  <wsdl:message name="LoadPreviousCustomerrSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadPreviousCustomerrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="GetsProductID">
+      <wsdl:input message="tns:GetsProductIDSoapIn" />
+      <wsdl:output message="tns:GetsProductIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductss">
+      <wsdl:input message="tns:GetProductssSoapIn" />
+      <wsdl:output message="tns:GetProductssSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByCustomerr">
+      <wsdl:input message="tns:GetOrdersByCustomerrSoapIn" />
+      <wsdl:output message="tns:GetOrdersByCustomerrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstCustomerData">
+      <wsdl:input message="tns:GetFirstCustomerDataSoapIn" />
+      <wsdl:output message="tns:GetFirstCustomerDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastCustomers">
+      <wsdl:input message="tns:GetLastCustomersSoapIn" />
+      <wsdl:output message="tns:GetLastCustomersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextCustomerr">
+      <wsdl:input message="tns:GetNextCustomerrSoapIn" />
+      <wsdl:output message="tns:GetNextCustomerrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadPreviousCustomerr">
+      <wsdl:input message="tns:LoadPreviousCustomerrSoapIn" />
+      <wsdl:output message="tns:LoadPreviousCustomerrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetsProductID">
+      <soap:operation soapAction="http://tempuri.org/GetsProductID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductss">
+      <soap:operation soapAction="http://tempuri.org/GetProductss" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByCustomerr">
+      <soap:operation soapAction="http://tempuri.org/GetOrdersByCustomerr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstCustomerData">
+      <soap:operation soapAction="http://tempuri.org/GetFirstCustomerData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastCustomers">
+      <soap:operation soapAction="http://tempuri.org/GetLastCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextCustomerr">
+      <soap:operation soapAction="http://tempuri.org/GetNextCustomerr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadPreviousCustomerr">
+      <soap:operation soapAction="http://tempuri.org/LoadPreviousCustomerr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetsProductID">
+      <soap12:operation soapAction="http://tempuri.org/GetsProductID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductss">
+      <soap12:operation soapAction="http://tempuri.org/GetProductss" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByCustomerr">
+      <soap12:operation soapAction="http://tempuri.org/GetOrdersByCustomerr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstCustomerData">
+      <soap12:operation soapAction="http://tempuri.org/GetFirstCustomerData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastCustomers">
+      <soap12:operation soapAction="http://tempuri.org/GetLastCustomers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextCustomerr">
+      <soap12:operation soapAction="http://tempuri.org/GetNextCustomerr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadPreviousCustomerr">
+      <soap12:operation soapAction="http://tempuri.org/LoadPreviousCustomerr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="http://localhost:63810/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="http://localhost:63810/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
